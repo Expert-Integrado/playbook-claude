@@ -754,14 +754,14 @@ body.modal-open { overflow: hidden; }
   </section>
 
   <nav class="chips" aria-label="Filtros por categoria">
-        <button class="chip is-active" type="button" aria-pressed="true" data-cat="todos">Todos <span class="count">67</span></button>
+        <button class="chip is-active" type="button" aria-pressed="true" data-cat="todos">Todos <span class="count">68</span></button>
         <button class="chip" type="button" aria-pressed="false" data-cat="desktop">Claude Desktop <span class="count">10</span></button>
         <button class="chip" type="button" aria-pressed="false" data-cat="cli">Terminal / CLI <span class="count">55</span></button>
         <button class="chip" type="button" aria-pressed="false" data-cat="windows">Windows <span class="count">17</span></button>
         <button class="chip" type="button" aria-pressed="false" data-cat="mac">Mac <span class="count">11</span></button>
         <button class="chip" type="button" aria-pressed="false" data-cat="wsl">WSL <span class="count">6</span></button>
         <button class="chip" type="button" aria-pressed="false" data-cat="node">Node / npm <span class="count">9</span></button>
-        <button class="chip" type="button" aria-pressed="false" data-cat="git">Git <span class="count">7</span></button>
+        <button class="chip" type="button" aria-pressed="false" data-cat="git">Git <span class="count">8</span></button>
         <button class="chip" type="button" aria-pressed="false" data-cat="auth">Login <span class="count">9</span></button>
         <button class="chip" type="button" aria-pressed="false" data-cat="mcp">MCP <span class="count">7</span></button>
         <button class="chip" type="button" aria-pressed="false" data-cat="cowork">Cowork <span class="count">3</span></button>
@@ -826,7 +826,7 @@ body.modal-open { overflow: hidden; }
   <section class="faq" aria-label="Perguntas frequentes">
     <div class="faq-header">
       <h2>Perguntas</h2>
-      <p class="count"><strong>67</strong> perguntas</p>
+      <p class="count"><strong>68</strong> perguntas</p>
     </div>
 
         <details class="faq-item" id="faq-baixar-instalador" data-cats="desktop windows mac rede">
@@ -917,7 +917,7 @@ body.modal-open { overflow: hidden; }
         <p><strong>No Windows (caso mais comum):</strong></p>
         <ol>
           <li>Instale o Git em <a href="https://git-scm.com/downloads/win" target="_blank" rel="noreferrer">git-scm.com/downloads/win</a>.</li>
-          <li><strong>Marque "Add to PATH"</strong> durante a instalação.</li>
+          <li><strong>Aceite as opções padrão</strong> (só "Next" até o fim — o padrão já coloca o Git no PATH).</li>
           <li><strong>Feche o Claude completamente</strong> (Gerenciador de Tarefas → Finalizar tarefa).</li>
           <li>Abra o Claude de novo.</li>
         </ol>
@@ -1098,7 +1098,7 @@ body.modal-open { overflow: hidden; }
           </summary>
           <div class="faq-body"><p><strong>Causa:</strong> Git for Windows não instalado ou não está no PATH.</p>
         <ol>
-          <li>Instale em <a href="https://git-scm.com/downloads/win" target="_blank" rel="noreferrer">git-scm.com/downloads/win</a> com "Add to PATH" marcado.</li>
+          <li>Instale em <a href="https://git-scm.com/downloads/win" target="_blank" rel="noreferrer">git-scm.com/downloads/win</a> aceitando as opções padrão (elas já colocam o Git no PATH).</li>
           <li>Reinicie o terminal.</li>
           <li>Se ainda falhar, edite <code>~/.claude/settings.json</code>:</li>
         </ol>
@@ -1292,8 +1292,8 @@ claude</code></pre></div>
           <div class="faq-body"><div class="code-block"><button class="copy-code-btn" type="button">Copiar</button><pre><code>node --version</code></pre></div>
         <p>Para atualizar:</p>
         <ul>
-          <li><strong>Windows:</strong> baixe LTS em <a href="https://nodejs.org" target="_blank" rel="noreferrer">nodejs.org</a>.</li>
-          <li><strong>macOS:</strong> <code>brew install node</code> ou nvm.</li>
+          <li><strong>Windows:</strong> acesse <a href="https://nodejs.org/pt/download" target="_blank" rel="noreferrer">nodejs.org/pt/download</a>, ignore o bloco de comandos do topo (é instalação via Docker), desça até <strong>"Ou baixe uma versão pré-compilada"</strong> e clique no botão verde <strong>Instalador Windows (.msi)</strong>.</li>
+          <li><strong>macOS:</strong> mesmo caminho com o <strong>Instalador macOS (.pkg)</strong>, ou <code>brew install node</code> / nvm.</li>
           <li><strong>nvm:</strong> <code>nvm install --lts && nvm use --lts</code>.</li>
         </ul></div>
         </details>
@@ -1359,7 +1359,18 @@ brew uninstall --cask claude-code</code></pre></div></div>
             <span class="tags"><span class="tag">Mac</span><span class="tag">Git</span></span>
             <button class="copy-link-btn" type="button" aria-label="Copiar link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
           </summary>
-          <div class="faq-body"><div class="code-block"><button class="copy-code-btn" type="button">Copiar</button><pre><code>xcode-select --install</code></pre></div></div>
+          <div class="faq-body"><div class="code-block"><button class="copy-code-btn" type="button">Copiar</button><pre><code>xcode-select --install</code></pre></div>
+        <p>Ou simplesmente rode <code>git --version</code> — se as ferramentas de linha de comando não estiverem instaladas, o Mac abre a janela de instalação sozinho.</p></div>
+        </details>
+        <details class="faq-item" id="faq-conta-github-necessaria" data-cats="git">
+          <summary>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            <span class="q">Preciso de conta no GitHub?</span>
+            <span class="tags"><span class="tag">Git</span><span class="tag">GitHub</span></span>
+            <button class="copy-link-btn" type="button" aria-label="Copiar link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+          </summary>
+          <div class="faq-body"><p><strong>Não.</strong> O Git é um programa que roda no seu computador; o GitHub é um site para publicar código na internet — são coisas diferentes, e nada no evento exige conta no GitHub.</p>
+        <p>O Claude Desktop e o Claude Code pedem apenas o <strong>Git</strong> instalado (e login na sua conta claude.ai).</p></div>
         </details>
         <details class="faq-item" id="faq-unsafe-repository" data-cats="cli git">
           <summary>
@@ -1797,6 +1808,7 @@ irm https://claude.ai/install.ps1 | iex</code></pre></div></div>
             <li>Windows 10/11 64 bits <em>ou</em> macOS 13 (Ventura) ou superior.</li>
             <li>Pelo menos 4 GB de RAM livre e 5 GB de disco.</li>
             <li>Senha de administrador à mão.</li>
+            <li><strong>Git e Node.js instalados</strong> — passo a passo na etapa "Preparar o Computador" do <a href="https://expert-integrado.github.io/guia-instalacao/" target="_blank" rel="noreferrer">Guia de Instalação</a>.</li>
             <li>Conta em <a href="https://claude.ai" target="_blank" rel="noreferrer">claude.ai</a> (plano Pro ou Max recomendado).</li>
             <li>País suportado — veja <a href="https://www.anthropic.com/supported-countries" target="_blank" rel="noreferrer">anthropic.com/supported-countries</a>.</li>
             <li>Rede corporativa? Faça em casa no WiFi pessoal, ou peça ao TI liberar <code>claude.ai</code>, <code>downloads.claude.ai</code> e <code>api.anthropic.com</code>.</li>
@@ -1809,19 +1821,20 @@ irm https://claude.ai/install.ps1 | iex</code></pre></div></div>
             <li><strong>Windows</strong> — para a grande maioria.</li>
             <li><strong>Windows ARM64</strong> — só para Snapdragon/Surface Pro X. Se não sabe o que é, <em>não é o seu caso</em>.</li>
           </ul></template>
-    <template id="card-tpl-3" data-title="Instalação passo a passo"><p><strong>Windows:</strong></p>
+    <template id="card-tpl-3" data-title="Instalação passo a passo"><p>Antes de instalar o Claude Desktop, deixe o <strong>Git</strong> e o <strong>Node.js</strong> prontos — passo a passo na etapa "Preparar o Computador" do <a href="https://expert-integrado.github.io/guia-instalacao/" target="_blank" rel="noreferrer">Guia de Instalação</a>.</p>
+          <p><strong>Windows:</strong></p>
           <ol>
             <li>Baixe o <code>.exe</code> em <a href="https://claude.ai/download" target="_blank" rel="noreferrer">claude.ai/download</a>.</li>
             <li>Dê dois cliques. Se aparecer "O Windows protegeu seu PC", clique em <strong>Mais informações → Executar assim mesmo</strong>.</li>
             <li>Siga o instalador (Avançar → Avançar → Instalar).</li>
             <li>Abra pelo menu Iniciar e faça login.</li>
-            <li><strong>Extra para a aba Code:</strong> instale o Git em <a href="https://git-scm.com/downloads/win" target="_blank" rel="noreferrer">git-scm.com/downloads/win</a>, marque "Add to PATH", feche o Claude por completo e abra de novo.</li>
+            <li><strong>A aba Code pediu o Git?</strong> Instale em <a href="https://git-scm.com/downloads/win" target="_blank" rel="noreferrer">git-scm.com/downloads/win</a> aceitando as opções padrão (só "Next" até o fim — o padrão já coloca o Git no PATH), feche o Claude por completo e abra de novo.</li>
           </ol>
           <p><strong>Mac:</strong></p>
           <ol>
             <li>Baixe o <code>.dmg</code>, arraste o ícone para Aplicativos.</li>
             <li>Abra pela pasta Aplicativos ou via Spotlight (<code>Cmd+Espaço</code>).</li>
-            <li>Faça login. Se pedir, rode <code>xcode-select --install</code> no Terminal para o Git.</li>
+            <li>Faça login. Para o Git, rode <code>git --version</code> no Terminal: se aparecer a janela das ferramentas de linha de comando, clique em <strong>Instalar</strong>; se aparecer um número de versão, já está pronto.</li>
           </ol></template>
     <template id="card-tpl-4" data-title="Preciso instalar Node.js?"><p>Para o <strong>Claude Desktop, não</strong>. O app já vem com tudo embutido.</p>
           <p>Você só precisa de Node.js quando:</p>
@@ -1831,7 +1844,8 @@ irm https://claude.ai/install.ps1 | iex</code></pre></div></div>
             <li>Vai programar em JavaScript/TypeScript com ajuda do Claude.</li>
           </ol>
           <p>Para checar se já tem: <code>node --version</code> (no PowerShell ou Terminal). Precisa ser <strong>Node 18 ou superior</strong> — versões 16 ou menor <em>não funcionam</em>.</p>
-          <p>Instalador: <a href="https://nodejs.org" target="_blank" rel="noreferrer">nodejs.org</a> (baixe a versão <strong>LTS</strong>, a verde).</p></template>
+          <p><strong>Para o evento, instale:</strong> os aplicativos que você cria com o Claude geralmente precisam do Node.js para rodar no seu computador.</p>
+          <p><strong>Como instalar:</strong> acesse <a href="https://nodejs.org/pt/download" target="_blank" rel="noreferrer">nodejs.org/pt/download</a>, ignore o bloco de comandos do topo (é instalação via Docker), desça até <strong>"Ou baixe uma versão pré-compilada"</strong> e clique no botão verde <strong>Instalador Windows (.msi)</strong> ou <strong>Instalador macOS (.pkg)</strong>. Passo a passo completo no <a href="https://expert-integrado.github.io/guia-instalacao/" target="_blank" rel="noreferrer">Guia de Instalação</a>.</p></template>
     <template id="card-tpl-5" data-title="Claude Code no terminal (CLI)"><p>Para quem já trabalha no terminal, quer rodar em servidor via SSH, integrar em scripts ou ter controle fino sobre permissões, MCPs e hooks.</p>
           <p><strong>Instalador nativo (recomendado):</strong></p>
           <ul>
