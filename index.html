@@ -1836,15 +1836,14 @@ irm https://claude.ai/install.ps1 | iex</code></pre></div></div>
             <li>Abra pela pasta Aplicativos ou via Spotlight (<code>Cmd+Espaço</code>).</li>
             <li>Faça login. Para o Git, rode <code>git --version</code> no Terminal: se aparecer a janela das ferramentas de linha de comando, clique em <strong>Instalar</strong>; se aparecer um número de versão, já está pronto.</li>
           </ol></template>
-    <template id="card-tpl-4" data-title="Preciso instalar Node.js?"><p>Para o <strong>Claude Desktop, não</strong>. O app já vem com tudo embutido.</p>
-          <p>Você só precisa de Node.js quando:</p>
+    <template id="card-tpl-4" data-title="Preciso instalar Node.js?"><p><strong>Sim — instale.</strong> O Claude Desktop <strong>não instala o Node.js</strong>, e os aplicativos que você cria com o Claude (pelo Desktop ou pelo terminal) geralmente precisam dele para rodar no seu computador.</p>
+          <p>Você também vai precisar dele quando:</p>
           <ol>
             <li>Vai usar o Claude Code pelo terminal <em>via npm</em> (mas hoje existe o instalador nativo que dispensa isso).</li>
             <li>Vai instalar conectores MCP feitos em Node.</li>
             <li>Vai programar em JavaScript/TypeScript com ajuda do Claude.</li>
           </ol>
           <p>Para checar se já tem: <code>node --version</code> (no PowerShell ou Terminal). Precisa ser <strong>Node 18 ou superior</strong> — versões 16 ou menor <em>não funcionam</em>.</p>
-          <p><strong>Para o evento, instale:</strong> os aplicativos que você cria com o Claude geralmente precisam do Node.js para rodar no seu computador.</p>
           <p><strong>Como instalar:</strong> acesse <a href="https://nodejs.org/pt/download" target="_blank" rel="noreferrer">nodejs.org/pt/download</a>, ignore o bloco de comandos do topo (é instalação via Docker), desça até <strong>"Ou baixe uma versão pré-compilada"</strong> e clique no botão verde <strong>Instalador Windows (.msi)</strong> ou <strong>Instalador macOS (.pkg)</strong>. Passo a passo completo no <a href="https://expert-integrado.github.io/guia-instalacao/" target="_blank" rel="noreferrer">Guia de Instalação</a>.</p></template>
     <template id="card-tpl-5" data-title="Claude Code no terminal (CLI)"><p>Para quem já trabalha no terminal, quer rodar em servidor via SSH, integrar em scripts ou ter controle fino sobre permissões, MCPs e hooks.</p>
           <p><strong>Instalador nativo (recomendado):</strong></p>
